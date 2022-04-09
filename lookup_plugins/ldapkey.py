@@ -21,7 +21,7 @@ except ImportError:
         display = Display()
 
 DEFAULT_LDAP_HOSTPORT = "10.100.60.20"
-DEFAULT_LDAP_DN = "dc=boass,dc=lan"
+DEFAULT_LDAP_DN = "dc=lab,dc=lan"
 DEFAULT_LDAP_URLSCHEME = "ldap"
 DEFAULT_LDAP_ATTRS = ['sshPublicKey']
 DEFAULT_LDAP_SCOPE = ldapurl.LDAP_SCOPE_SUBTREE
