@@ -14,13 +14,13 @@
       paths: '../vars'
   tags: always
 
-- include: dns.yml
+- include_tasks: dns.yml
   tags: manage_dns
 
-- include: hostname.yml
+- include_tasks: hostname.yml
   when: manage_hostname
 
-- include: "{{ ansible_os_family }}.yml"
+- include_tasks: "{{ ansible_os_family }}.yml"
 
 - name: main | Create .bashrc.d directories
   file:
@@ -62,7 +62,7 @@
     - conf: /etc/bashrc
       dir_d: /etc/bash.bashrc.d
 
-- include: generate_hosts.yml
+- include_tasks: generate_hosts.yml
   when: generate_hosts_from_inventory == true
 
 - name: main | Install extra packages
@@ -129,18 +129,18 @@
     enabled: no
   with_items: "{{ service_disabled }}"
 
-- include: ssh.yml
+- include_tasks: ssh.yml
   tags:
     - config
     - ssh_config
 
-- include: atop.yml
+- include_tasks: atop.yml
   when: atop_enable
   tags:
     - config
     - atop
 
-- include: logrotate.yml
+- include_tasks: logrotate.yml
   when: logrotate_enable
   tags:
     - config
