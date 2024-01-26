@@ -8,7 +8,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias grep='grep --color=auto'
 alias c='clear -x'
-alias lkp-dmesg='sudo /bin/dmesg --decode --nopager --color --ctime'
+alias dmesg='sudo /bin/dmesg --decode --nopager --color --ctime'
 #---- a few journalctl(1) aliases
 # jlog: current (from most recent) boot only, everything
 alias jlog='/bin/journalctl -b --all --catalog --no-pager'
