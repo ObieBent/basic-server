@@ -82,4 +82,12 @@
     enablerepo: powertools,PowerTools
   when:
     - install_epel | bool
-    - ansible_distribution_major_version >= '8'
+    - ansible_distribution_major_version == '8'
+
+- name: RedHat | Install moreutils on RedHat-9
+  dnf:
+    name: moreutils
+    enablerepo: crb
+  when:
+    - install_epel | bool
+    - ansible_distribution_major_version == '9'

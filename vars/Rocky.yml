@@ -8,7 +8,7 @@ basic_packages:
   - lsof
   - psmisc
   - rsync
-    #- screen
+  - screen
   - strace
   - sudo
   - tar
